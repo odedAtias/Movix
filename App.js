@@ -18,5 +18,10 @@ export default function App() {
 		righteous: Righteous,
 	});
 
-	if (loaded) return <></>;
+	if (loaded)
+		return (
+			<>
+				<StatusBar style='dark' />
+			</>
+		);
 }
