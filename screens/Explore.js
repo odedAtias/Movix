@@ -1,6 +1,12 @@
 // RN core components & API imports
 import { StyleSheet, Text, View } from 'react-native';
 
+//
+import { useContext } from 'react';
+
+import { TvShowsContext } from '../store/TvShowsContext';
+import { MoviesContext } from '../store/MoviesContext';
+
 // Explore component
 const Explore = () => {
 	return (
