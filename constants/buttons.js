@@ -1,4 +1,4 @@
 export const BUTTONS = {
-	facebook: require('../images/facebook.png'),
-	google: require('../images/google.png'),
+	facebook: require('../assets/images/facebook.png'),
+	google: require('../assets/images/google.png'),
 };
