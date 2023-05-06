@@ -2,7 +2,7 @@
 import { StyleSheet, Text, View } from 'react-native';
 
 // ItemDetails component
-const ItemDetails = () => {
+const ItemDetails = ({ route }) => {
 	return (
 		<View>
 			<Text>ItemDetails</Text>

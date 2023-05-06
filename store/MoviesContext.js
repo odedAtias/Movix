@@ -26,7 +26,6 @@ const MoviesContextProvider = ({ children }) => {
 	useEffect(() => {
 		const fetchMovies = async () => {
 			const data = await getItems(BACKEND_URL);
-			console.log(data);
 			setMovies(data.results);
 		};
 		fetchMovies();
