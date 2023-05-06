@@ -52,7 +52,7 @@ const Explore = ({ navigation }) => {
 				<View>
 					<View style={styles.popularItems}>
 						<View style={styles.titleContainer}>
-							<Text style={styles.title}>Top 5 Popular movies</Text>
+							<Text style={styles.title}>Top 5 Popular Tv shows</Text>
 							<ExploreButton />
 						</View>
 						<PopularItems items={popularTvshows} />

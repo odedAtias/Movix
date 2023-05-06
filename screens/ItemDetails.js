@@ -3,6 +3,7 @@ import { StyleSheet, Text, View } from 'react-native';
 
 // ItemDetails component
 const ItemDetails = ({ route }) => {
+	console.log(route.params);
 	return (
 		<View>
 			<Text>ItemDetails</Text>
