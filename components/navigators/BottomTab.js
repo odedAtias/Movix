@@ -1,6 +1,6 @@
 // Custom components imports
 import ExploreStack from './ExploreStack';
-import Favorites from './../../screens/Favorites';
+import FavoritesStack from './FavoritesStack';
 
 // Navigation Imports
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
@@ -57,8 +57,8 @@ const BottomTab = () => (
 					}}
 				/>
 				<Tab.Screen
-					name='Favorites'
-					component={Favorites}
+					name='FavoritesStack'
+					component={FavoritesStack}
 					options={{
 						tabBarIcon: ({ focused, color }) => {
 							let iconName = focused ? 'bookmarks' : 'bookmarks-outline';

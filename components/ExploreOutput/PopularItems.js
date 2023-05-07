@@ -13,7 +13,11 @@ const PopularItems = ({ items, isMovies }) => {
 				horizontal
 				showsHorizontalScrollIndicator={false}
 				renderItem={itemData => (
-					<PopularItem item={itemData.item} isMovie={isMovies} />
+					<PopularItem
+						keyExtractor={item => item.id}
+						item={itemData.item}
+						isMovie={isMovies}
+					/>
 				)}
 				keyExtractor={item => item.id}
 			/>
