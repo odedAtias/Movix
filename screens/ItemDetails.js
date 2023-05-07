@@ -2,7 +2,7 @@
 import { useContext, useLayoutEffect } from 'react';
 
 // RN core components & API imports
-import { StyleSheet, Text, View, Image, ScrollView } from 'react-native';
+import { StyleSheet, Text, View, Image, ScrollView, Alert } from 'react-native';
 
 // Custom components imports
 import IconButton from '../components/generics/IconButton';
@@ -28,14 +28,38 @@ const ItemDetails = ({ navigation, route }) => {
 
 	const isFavorite = context.favorites.includes(item);
 
+	const type = isMovie ? 'movie' : 'tv show';
+
 	const handleChangeFavoriteStatus = () => {
 		let favorites = [...context.favorites];
 		if (!isFavorite) {
 			favorites.push(item);
+			Alert.alert(
+				`New ${type} added`,
+				`The ${type} ${
+					type === 'movie' ? item.title : item.name
+				} has been deleted to your favorites list.`,
+				[
+					{
+						text: 'OK',
+					},
+				]
+			);
 		} else {
 			let index = favorites.findIndex(i => i.id === item.id);
 			if (index !== -1) {
 				favorites.splice(index, 1);
+				Alert.alert(
+					`${type} deleted`,
+					`The ${type} ${
+						type === 'movie' ? item.title : item.name
+					} has been deleted to your favorites list.`,
+					[
+						{
+							text: 'OK',
+						},
+					]
+				);
 			}
 		}
 		context.setFavorites(favorites);
@@ -75,8 +99,10 @@ const ItemDetails = ({ navigation, route }) => {
 				<View style={{ marginTop: 5 }}>
 					<View
 						style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
-						<Text style={styles.details}>{item.release_date} </Text>
 						<Text style={styles.details}>{displayGenres(item.genre_ids)}</Text>
+						<Text style={styles.details}>
+							{isMovie ? item.release_date : item.first_air_date}
+						</Text>
 					</View>
 				</View>
 				{/* Overview */}

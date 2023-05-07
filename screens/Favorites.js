@@ -31,7 +31,9 @@ const Favorites = () => {
 				<View style={styles.popularItems}>
 					<Text style={styles.title}>My Favorites movies</Text>
 					{moviesContext.favorites.length === 0 ? (
-						<Text style={styles.error}>No such movies yet !</Text>
+						<Text style={styles.error}>
+							You have not added to favorites yet !
+						</Text>
 					) : (
 						<PopularItems items={moviesContext.favorites} isMovies />
 					)}
@@ -40,7 +42,9 @@ const Favorites = () => {
 				<View style={styles.popularItems}>
 					<Text style={styles.title}>My Favorites tv shows</Text>
 					{tvshowsContext.favorites.length === 0 ? (
-						<Text style={styles.error}>No such tv shows yet !</Text>
+						<Text style={styles.error}>
+							You have not added to favorites yet
+						</Text>
 					) : (
 						<PopularItems items={tvshowsContext.favorites} />
 					)}
@@ -83,6 +87,7 @@ const styles = StyleSheet.create({
 		color: COLORS.error,
 		fontSize: 16,
 		marginTop: 10,
+		textAlign: 'center',
 	},
 });
 
