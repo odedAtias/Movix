@@ -12,13 +12,11 @@ import { MoviesContext } from './../../store/MoviesContext';
 import { TvShowsContext } from './../../store/TvShowsContext';
 
 // ItemList component
-const ItemsList = ({ isMovies }) => {
+const ItemsList = ({ items, isMovies }) => {
 	// Create the context by the type of the list
 	const context = isMovies
 		? useContext(MoviesContext)
 		: useContext(TvShowsContext);
-
-	const items = isMovies ? [...context.movies] : [...context.tvshows];
 
 	const sortedItems = items =>
 		items.sort((a, b) => b.vote_average - a.vote_average);

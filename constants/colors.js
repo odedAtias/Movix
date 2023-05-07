@@ -3,7 +3,7 @@ export const COLORS = {
 	primaryVariant: '#0073CF',
 	secondary: '#03DAC6',
 	background: '#121212',
-	background2: '	#fff',
+	background2: '		#393433',
 	error: '#CF6679',
 	onBackground1: '#FFF',
 	onBackground2: '#a9a9a9',

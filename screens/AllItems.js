@@ -1,5 +1,5 @@
 // Hooks imports
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 
 // RN core components & API imports
 import { StyleSheet, View } from 'react-native';
@@ -8,16 +8,43 @@ import { StyleSheet, View } from 'react-native';
 import Input from '../components/AllItemsOutput/Input';
 import ItemsList from '../components/AllItemsOutput/ItemsList';
 
+// Contexts imports
+import { MoviesContext } from '../store/MoviesContext';
+import { TvShowsContext } from './../store/TvShowsContext';
+
+// Utils
+import { getItems } from '../utils/http';
+
+// Search APIS
+const MOVIE_SEARCH_API =
+	'https://api.themoviedb.org/3/search/movie?api_key=f214b16171fc56615485b80f1d188763&query="';
+const TV_SEARCH_API =
+	'https://api.themoviedb.org/3/search/tv?api_key=f214b16171fc56615485b80f1d188763&query="';
+
 // AllItems component
 const AllItems = ({ route }) => {
+	const isMovies = route.params.isMovies;
+
+	const context = isMovies
+		? useContext(MoviesContext)
+		: useContext(TvShowsContext);
+
 	// Search value state
 	const [value, setValue] = useState('');
+	const [items, setItems] = useState(
+		isMovies ? context.movies : context.tvshows
+	);
 
 	// AllItems handlers
 	const handleChangeText = t => setValue(t);
 
-	const handleSearch = () => {
-		console.log(value);
+	const handleSearch = async () => {
+		if (value && value !== '') {
+			let data = '';
+			if (isMovies) data = await getItems(MOVIE_SEARCH_API + value);
+			else data = await getItems(TV_SEARCH_API + value);
+			setItems(data.results);
+		}
 	};
 
 	return (
@@ -34,7 +61,7 @@ const AllItems = ({ route }) => {
 			/>
 			<View style={{ paddingBottom: '50%', paddingTop: '10%' }}>
 				{/* Items list */}
-				<ItemsList isMovies={route.params.isMovies} />
+				<ItemsList items={items} isMovies={isMovies} />
 			</View>
 		</View>
 	);

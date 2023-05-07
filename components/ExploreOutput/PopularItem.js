@@ -22,7 +22,7 @@ const PopularItem = ({ item, isMovie }) => {
 					}>
 					<Image
 						source={{
-							uri: `https://image.tmdb.org/t/p/w500${item.poster_path}`,
+							uri: `https://image.tmdb.org/t/p/w1280${item.poster_path}`,
 						}}
 						style={styles.contentContainer}
 					/>

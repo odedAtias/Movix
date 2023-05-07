@@ -70,7 +70,7 @@ const styles = StyleSheet.create({
 		alignItems: 'center',
 		paddingVertical: '20%',
 		paddingHorizontal: 20,
-		gap: 10,
+		gap: 2,
 	},
 	popularItems: {
 		justifyContent: 'center',
