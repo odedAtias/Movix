@@ -65,6 +65,11 @@ Movix is a personalized movie recommendation engine that helps users find movies
 ```
 ~$: w
 ```
+🔹 Notes:
+
+- The best quality is in PIXEL5 and PIXEL6 Devices.
+
+- Recommendation: The built-in network of the T-MOBILE emulator is better than AndroidWifi
 
 ## for any questions
 
