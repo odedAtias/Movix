@@ -12,9 +12,9 @@ Movix is a personalized movie recommendation engine that helps users find movies
 
 🟣 Add movies / tv shows to the favorites.
 
-![Movix1](Movix1.png)
+![movix1](movix1.png)
 
-![Movix2](Movix2.png)
+![movix2](movix2.png)
 
 
 ## Technologies
