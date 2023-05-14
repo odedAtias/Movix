@@ -1,6 +1,6 @@
 # Movix  🎬
 
-Movix is a personalized movie recommendation engine that helps users find movies they will love based on their individual preferences. This project is built using Python and utilizes the MovieLens dataset to provide movie recommendations.
+Movix is a personalized movie recommendation engine that helps users find movies they will love based on their individual preferences. This project is built using React Native and utilizes the TMDB API to provide movie recommendations.
 
 
 ## Features
